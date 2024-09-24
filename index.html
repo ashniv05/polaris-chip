@@ -19,116 +19,10 @@
     polaris-chip {
       margin: 16px;
     }
-    .card-image {
-  width: 300px;
-}
-
-.card {
-  font-size: 21px;
-  display: inline-flex;
-  padding: 8px;
-  margin: 8px;
-  background-color: blue;
-}
-.button:hover,
-.button:focus {
-  background-color: grey;
-}
-.clone:hover,
-.clone:focus {
-  background-color: grey;
-}
-#change-title:hover,
-#change-title:focus {
-  background-color: grey;
-}
-#change-image:hover,
-#change-image:focus {
-  background-color: grey;
-}
-#bg-change:hover,
-#bg-change:focus {
-  background-color: grey;
-}
-#delete-card:hover,
-#delete-card:focus {
-  background-color: grey;
-}
-
-.card-text {
-  width: 300px;
-  padding: 0 8px 8px 8px;
-  color: black;
-  background-color: white;
-  margin: 0 0 0 8px;
-  height: 500px;
-}
-
-.card-title {
-  position: static;
-  background-color: green;
-  text-align: center;
-  font-size: 50px;
-  padding: 8px 8px 16px;
-  margin: 8px;
-}
-.button {
-  background-color: green;
-  color: white;
-  font-size: 20px;
-  border-radius: 10%;
-  margin: 20px 0px;
-  text-align: center;
-}
-.clone {
-  background-color: green;
-  color: white;
-  font-size: 20px;
-  border-radius: 10%;
-  margin: 20px 0px;
-  text-align: center;
-}
-#change-title {
-  background-color: green;
-  color: white;
-  font-size: 20px;
-  border-radius: 10%;
-  margin: 20px 0px;
-  text-align: center;
-}
-#change-image {
-  background-color: green;
-  color: white;
-  font-size: 20px;
-  border-radius: 10%;
-  margin: 20px 0px;
-  text-align: center;
-}
-#bg-change {
-  background-color: green;
-  color: white;
-  font-size: 20px;
-  border-radius: 10%;
-  margin: 20px 0px;
-  text-align: center;
-}
-#delete-card {
-  background-color: green;
-  color: white;
-  font-size: 20px;
-  border-radius: 10%;
-  margin: 20px 0px;
-  text-align: center;
-}
-
-@media 
-  screen and (max-width: 500px) {
-    
-}
-@media 
-  screen and (min-width: 800px) { 
-    
-}
+    my-card {
+      margin: 16px;
+      font-family: 'sans-serif';
+    }
 
   </style>
   <title>polaris-chip / my-card</title>
@@ -137,45 +31,18 @@
 <body>
   <h1>polaris-chip</h1>
   <!-- this is going to do whatever the tag's defaults are -->
-  <polaris-chip title="Science Behind Northern Lights link="https://www.hurtigruten.com/en-us/inspiration/northern-lights/science"></polaris-chip>
-  <polaris-chip title="Travel to Northern Lights></polaris-chip>
-  <polaris-chip title="Adventure to the Northern Lights"></polaris-chip>
+  <polaris-chip title="News of Record" link="https://psu.edu/" shiny></polaris-chip>
+  <polaris-chip title="Faculty and Staff" link="https://hax.psu.edu"></polaris-chip>
+  <polaris-chip title="Sports are the only thing that matter"></polaris-chip>
+  <polaris-chip title="Grants and donations"></polaris-chip>
 
   <h1>my-card</h1>
 
-  <!-- First Card Instance -->
-  <my-card title="Northern Lights" 
-           imgSrc="https://www.google.com/imgres?q=northern%20lights&imgurl=https%3A%2F%2Ft4.ftcdn.net%2Fjpg%2F05%2F39%2F95%2F49%2F360_F_539954938_CVb0S2AaTtK2ERmiznChbh9yS5Y0WP6q.jpg&imgrefurl=https%3A%2F%2Fstock.adobe.com%2Fsearch%3Fk%3Dnorthern%2Blights&docid=TQl5rJCy-iJfNM&tbnid=LRfzW6J5gyn-HM&vet=12ahUKEwiI1ty6yNmIAxX1rokEHRU3C48QM3oECF4QAA..i&w=540&h=360&hcb=2&ved=2ahUKEwiI1ty6yNmIAxX1rokEHRU3C48QM3oECF4QAA" 
-           description="Northern Lights Explained" 
-           link="https://www.mtu.edu/tour/copper-country/northern-lights/">
-  </my-card>
-  
-<div class="controls">
-    <button class="button">Details</button>
-    <button class="clone">Clone Card</button>
-    <button id="change-title">Change Title</button>
-    <button id="change-image">Change Image</button>
-    <button id="bg-change">Change Background</button>
-    <button id="delete-card">Delete Card</button>
-  </div>
-
-  <h2>Learn More about the Northern Lights!</h2>
-  <div id="cardlist">
-    <div class="card">
-      <img class="card-image" alt="Picture of Northern Lights" src="https://thumbs.dreamstime.com/b/vertical-shot-snow-covered-mountains-under-beautiful-northern-lights-sky-norway-162952726.jpg" />
-      <div class="card-text">
-        <h3 class="card-title">Northern Lights</h3>
-        <div class="card-details">
-          <p>
-            This is a picture of the Northern Lights!! WOW! There are so many different colors like green, blue, and purple. Click on the link to learn more details and you can watch a video on it!
-          </p>
-          <h4>
-            <a href="https://www.youtube.com/watch?v=N-TV_6eIDxw&pp=ygUYdmlkZW8gb2Ygbm9ydGhlcm4gbGlnaHRz">Northern Lights Video</a>
-          </h4>
-        </div>
-      </div>
-    </div>
-  </div>
+  <my-card image="https://uploads.alaska.org/categoryLandingPages/Alaska-Statewide-Landing-Pages/alaska-northern-lights-tours/_1920xAUTO_fit_center-center_65_none/2188688/chris-moss-aurora-trapper-creek.jpg" title="Adventure to the Northern Lights" description="Travel and Explore to the Northern Lights."></my-card>
+  <my-card image="https://th-thumbnailer.cdn-si-edu.com/7dDu-8Sn__AcgQ8vcK98QUIPTQw=/1000x750/filters:no_upscale()/https://tf-cmsv2-smithsonianmag-media.s3.amazonaws.com/filer/9c/3c/9c3c8348-46db-48fc-ae33-e0f3461a88a1/istock-487516034.jpg" link="https://www.visiticeland.com/" title="Travel to Iceland" description="Explore the Many Activities in Iceland"></my-card>
+  <my-card image="https://static.independent.co.uk/2022/11/23/11/newFile-4.jpg" link="https://visitsweden.com/" title="Visit Sweden" description="Check out activities in Sweden"></my-card>
+  <my-card image="https://uploads.alaska.org/categoryLandingPages/Alaska-Statewide-Landing-Pages/alaska-northern-lights-tours/_1920xAUTO_fit_center-center_65_none/2188688/chris-moss-aurora-trapper-creek.jpg" link="https://thehiddennorth.com/mistakes-people-make-when-observing-the-northern-lights/" title="Mistakes People Make at Nothern Lights" description="What to Know Before Visiting"></my-card>
+ 
 
   <!-- this is what is bringing in the definition for this tag -->
   <script type="module" src="./src/polaris-chip.js"></script>
