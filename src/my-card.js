@@ -8,20 +8,16 @@ import { LitElement, html, css } from 'lit';
 
 export class MyCard extends LitElement {
 
+  static get tag() {
+    return 'my-card';
+  }
+
   static get properties() {
       return {
-        title: { type: String
-
-         },
-        image: { type: String 
-
-        },
-        description: { type: String 
-
-        },
-        link: { type: String 
-
-        }
+        title: { type: String},
+        image: { type: String },
+        description: { type: String },
+        link: { type: String }
       };
     }
   
@@ -32,36 +28,70 @@ export class MyCard extends LitElement {
     this.description = 'Description';
     this.image = '';
     this.link = '#';
-    }
   }
 
+
+  
   static get styles() {
     return css`
+      :host {
+        display: inline-block;
+      }
+      
       .card {
-        border: 1px solid #ccc;
-        padding: 16px;
+        padding: 8px;
+        width: 300px;
+        border-radius: 8px;
+        text-align: center;
         background-color: white;
+        border: 2px solid black;
       }
-      .card img {
-        max-width: 100%;
+
+      .title {
+        font-size:24px;
       }
-      .card h3 {
-        margin: 0;
+
+      img {
+        margin: auto;
+        display: flex;
+        height: 150px;
+        width: 200px;
       }
-      .card a {
-        color: blue;
+
+      button {
+        margin: auto;
+        display: flex;
+        background-color: blue;
+      }
+
+      a:focus,
+      a:hover {
+        color: yellow;
+      }
+
+      a {
         text-decoration: none;
+        color: white;
       }
     `;
   }
 
+
   render() {
-    return html`<div>${this.title}</div>`;
+    return html`<div class="card">
+      <img src=${this.image}>
+      <div class="title">${this.title}</div>
+      <p>${this.description}</p>
+      <button><a href=${this.link}>Details</a></button>
+      </div>`;
   }
 
   static get properties() {
     return {
       title: { type: String },
+      image: { type: String},
+      link: {type: String},
+      description: {type: String}
     };
   }
 }
