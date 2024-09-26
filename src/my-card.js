@@ -28,6 +28,8 @@ export class MyCard extends LitElement {
     this.description = 'Description';
     this.image = '';
     this.link = '#';
+    this.fancy = false;
+    this.text = "These are descriptive words that describe."
   }
 
 
@@ -37,7 +39,12 @@ export class MyCard extends LitElement {
       :host {
         display: inline-block;
       }
-      
+      :host([fancy]) {
+       display: block;
+       background-color: turquoise;
+      border: 2px solid blue;
+      box-shadow: 10px 5px 5px green; 
+    }
       .card {
         padding: 8px;
         width: 300px;
@@ -59,9 +66,13 @@ export class MyCard extends LitElement {
       }
 
       button {
-        margin: auto;
-        display: flex;
+        margin: 12px;
         background-color: blue;
+      }
+
+      .button-wrapper {
+        display: flex;
+        justify-content: center;
       }
 
       a:focus,
@@ -79,11 +90,29 @@ export class MyCard extends LitElement {
 
   render() {
     return html`<div class="card">
-      <img src=${this.image}>
-      <div class="title">${this.title}</div>
-      <p>${this.description}</p>
-      <button><a href=${this.link}>Details</a></button>
-      </div>`;
+        <img src=${this.image}>
+          <div class="title">${this.title}</div>
+        <p>${this.description}</p>
+        <details ?open="${this.fancy}" @toggle="${this.openChanged}">
+        <summary>Description</summary>
+          <div>
+        <slot>${this.text}</slot>
+          </div>
+        </details>
+          <div class="button-wrapper">
+        <button><a href=${this.link}>Details</a></button>
+          </div>
+          </div>`;
+  }
+  // put this anywhere on the MyCard class; just above render() is probably good
+  openChanged(e) {
+    console.log(e.newState);
+    if (e.newState === "open") {
+      this.fancy = true;
+    }
+    else {
+      this.fancy = false;
+    }
   }
 
   static get properties() {
@@ -91,7 +120,8 @@ export class MyCard extends LitElement {
       title: { type: String },
       image: { type: String},
       link: {type: String},
-      description: {type: String}
+      description: {type: String},
+      fancy: { type: Boolean, reflect: true }
     };
   }
 }
